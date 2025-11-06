@@ -1,0 +1,33 @@
+# Evita copiar o ambiente virtual
+venv/
+
+# Cache e arquivos temporários do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Banco de dados local
+*.db
+
+# Arquivos de configuração sensíveis
+.env
+
+# Logs
+*.log
+
+# Arquivos do sistema e IDEs
+.DS_Store
+*.swp
+*.bak
+.idea/
+.vscode/
+
+# Testes e relatórios locais
+.coverage
+htmlcov/
+pytest_cache/
+
+# Repositórios ocultos
+.git/
+.gitignore

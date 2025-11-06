@@ -1,0 +1,42 @@
+# 🐳 Comandos Docker - Passo a Passo
+
+#1 Construir a imagem a partir do Dockerfile
+docker build -t meu_app .
+
+#2 Listar as imagens disponíveis
+docker images
+
+#3 Criar e executar o container com base na imagem
+docker run -d -p 5000:5000 --name meu_app_container meu_app
+
+#4 Verificar containers em execução
+docker ps
+
+#5 Verificar todos os containers (inclusive os parados)
+docker ps -a
+
+#6 Ver logs do container em tempo real
+docker logs -f meu_app_container
+
+#7 Acessar o terminal dentro do container
+docker exec -it meu_app_container bash
+
+#8 Parar o container
+docker stop meu_app_container
+
+#9 Reiniciar o container parado
+docker start meu_app_container
+
+#Atualizar a aplicação (rebuild)
+docker build -t meu_app .
+docker rm -f meu_app_container
+docker run -d -p 5000:5000 --name meu_app_container meu_app
+
+#10 Remover um container específico
+docker rm -f meu_app_container
+
+#11 Remover uma imagem específica
+docker rmi meu_app
+
+#12 Limpar todos os containers, imagens e volumes não utilizados
+docker system prune -a
