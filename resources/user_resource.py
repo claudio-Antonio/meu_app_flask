@@ -44,3 +44,7 @@ def login():
 def protegido():
     current_user = get_jwt_identity()
     return jsonify({"message": f"Olá, {current_user}!"}), 200
+
+@user_bp.route("/usuarios/<int:user_id>", methods=["DELETE"])
+def delete_usuario(user_id):
+    return UserService.deletar_usuario(user_id)

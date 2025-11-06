@@ -14,3 +14,12 @@ class UserRepository:
         db.session.add(user)
         db.session.commit()
         return user
+
+    @staticmethod
+    def delete_by_id(user_id):
+        user = User.query.get(user_id)
+        if user:
+            db.session.delete(user)
+            db.session.commit()
+            return True
+        return False

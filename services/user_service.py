@@ -23,3 +23,11 @@ class UserService:
         if usuario and usuario.check_password(senha):
             return usuario
         return None
+
+    @staticmethod
+    def deletar_usuario(user_id):
+        sucesso = UserRepository.delete_by_id(user_id)
+        if sucesso:
+            return {"mensagem": "Usuário deletado com sucesso"}, 200
+        return {"erro": "Usuário não encontrado"}, 404
+
