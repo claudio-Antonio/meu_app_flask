@@ -37,13 +37,9 @@ jobs:
         run: |
           docker build -t meu_app .
 
-      #6 (Opcional) Fazer push da imagem para Docker Hub
-      - name: Push Docker image to Docker Hub
-        if: github.ref == 'refs/heads/main'
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      #6 (Opcional) Simulação de deploy (sem Docker Hub)
+      - name: Simulate deploy
         run: |
-          echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-          docker tag meu_app $DOCKER_USERNAME/meu_app:latest
-          docker push $DOCKER_USERNAME/meu_app:latest
+          echo "✅ Build finalizado com sucesso!"
+          echo "A imagem Docker foi construída localmente."
+            echo "Pronto para deploy!"
