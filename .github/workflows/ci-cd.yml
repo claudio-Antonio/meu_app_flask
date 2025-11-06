@@ -30,7 +30,7 @@ jobs:
       #4 Testar a aplicação (exemplo simples)
       - name: Run tests
         run: |
-          python -m flake8 true
+          python -m flake8
 
       #5 Construir imagem Docker
       - name: Build Docker image
